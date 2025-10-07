@@ -311,7 +311,7 @@ body {
 
 .project-card {
   position: relative;
-  width: 280px;
+  width: 350px;
   height: 200px;
   overflow: hidden;
   border-radius: 15px;
@@ -586,6 +586,8 @@ body {
   background: rgba(0,0,0,0.6);
   justify-content: center;
   align-items: center;
+  /* max-width: 600px; */
+  padding: 20px;
 }
 
 .modal-content {
@@ -640,6 +642,16 @@ body {
   font-size: 28px;
   cursor: pointer;
 }
+
+#modalDescription {
+  white-space: pre-line;       /* preserves \n and <br> line breaks */
+  word-wrap: break-word;       /* wraps long words to next line */
+  overflow-wrap: break-word;   /* ensures very long words also wrap */
+  text-align: left;            /* aligns text nicely */
+  line-height: 1.5;            /* adds spacing between lines */
+  color: #080000;                 /* optional: keep same as modal text */
+}
+
 
 
 

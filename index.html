@@ -136,41 +136,7 @@
 
 
 
-    <!-- <section id="skills" class="skills-section">
-        <h2>My Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <img src="html (2).png" class="skill-icon" alt="HTML" />
-                <h4>HTML</h4> -->
-                <!-- <div class="level-label">95%</div> -->
-            <!-- </div>
-            <div class="skill-card">
-                <img src="css.png" class="skill-icon" alt="CSS" />
-                <h4>CSS</h4> -->
-                <!-- <div class="level-label">92%</div> -->
-            <!-- </div>
-            <div class="skill-card">
-                <img src="javascript.png" class="skill-icon" alt="JavaScript" />
-                <h4>JavaScript</h4> -->
-                <!-- <div class="level-label">80%</div> -->
-            <!-- </div>
-            <div class="skill-card">
-                <img src="react.png" class="skill-icon" alt="react" />
-                <h4>react</h4> -->
-                <!-- <div class="level-label">90%</div> -->
-            <!-- </div> -->
-            <!-- <div class="skill-card"> -->
-                <!-- <img src="python.png" class="skill-icon" alt="python" /> -->
-                <!-- <h4>python</h4> -->
-                <!-- <div class="level-label">78%</div> -->
-            <!-- </div> -->
-            <!-- <div class="skill-card"> -->
-                <!-- <img src="mysql.png" class="skill-icon" alt="mysql" /> -->
-                <!-- <h4>mysql</h4>  -->
-                <!-- <div class="level-label">60%</div> -->
-            <!-- </div> -->
-
-        <!-- Project card -->
+    
 
         <section id="projects" class="projects-section">
             <h2 class="section-title">My Projects</h2>
@@ -211,32 +177,39 @@
 
 
                 <div class="project-card">
-                    <img src="./assets/trendaura.png" alt="Hotel Management" />
+                    <img src="hotel2.jpg" alt="Hotel Management" />
                     <div class="project-info">
                         <h3>Hotel Management System</h3>
                         <p>PYTHON</p>
                         <a href="#" 
                         class="view-project"
                         data-title="Hotel Management System"
-                        data-tech="Python, MySQL"
-                        data-description="A desktop-based project to manage hotel bookings, food orders, and billing."
-                        data-link="https://github.com/yourusername/hotel-management"
+                        data-tech="Python,SQLite"
+                        data-description="desktop-based project to manage hotel bookings, billing, and customer    management.<br>
+                                          Implemented front desk, room allocation, and billing modules to streamline hotel operations and reduce manual errors.<br>
+                                          Integrated food ordering and inventory management for efficient restaurant and housekeeping operations.<br>
+                                          Designed dynamic reports and analytics for revenue tracking, occupancy, and customer feedback.<br>
+                                          Enhanced user experience with a clean interface and automated notifications for bookings and payments.<br> "
+                        data-link=""
                         data-demo="#">View Project</a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <img src="./assets/neolearn.png" alt="Amazon Clone" />
+                    <img src="jewellery.png" alt="Amazon Clone" />
                     <div class="project-info">
-                        <h3>Amazon Clone</h3>
-                        <p>HTML, CSS, JS</p>
+                        <h3>VAIBHAV jewels(E-Commerce Website)</h3>
+                        <p>HTML, CSS, JS, node.js,rezorpay</p>
                         <a href="#" 
                         class="view-project"
                         data-title="Amazon Clone"
                         data-tech="HTML, CSS, JavaScript"
-                        data-description="A responsive clone of Amazon with product listings, cart functionality, and authentication."
-                        data-link="https://github.com/yourusername/amazon-clone"
-                        data-demo="https://amazon-clone-hw9r.onrender.com">View Project</a>
+                        data-description="Developed a responsive e-commerce website to showcase and sell jewellery online.<br>
+                                          Implemented product catalog, detailed product pages, shopping cart, and secure checkout functionality.<br>
+                                          Integrated payment gateway  and order management.<br>
+                                          Designed a clean UI/UX for smooth navigation and enhanced customer experience."
+                        data-link="https://github.com/Vaibhav-0077/Jewellery-Web "
+                        data-demo="https://jewellery-web.onrender.com/">View Project</a>
                     </div>
                 </div>
 
@@ -324,7 +297,7 @@
 
       modalTitle.textContent = this.dataset.title;
       modalTech.textContent = "Tech Stack: " + this.dataset.tech;
-      modalDescription.textContent = this.dataset.description;
+      modalDescription.innerHTML = this.dataset.description;
       modalLink.href = this.dataset.link;
       modalDemo.href = this.dataset.demo;
 
