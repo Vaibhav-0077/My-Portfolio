@@ -161,6 +161,66 @@ body {
   z-index: -1;
 }
 
+/* Hide hero image on mobile */
+/* Hide hero image and remove space on mobile */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px; /* reduce space around */
+    min-height: auto;   /* remove large height gap */
+  }
+
+  .hero-right {
+    display: none; /* hide image section */
+  }
+
+  .hero-left {
+    width: 100%;
+    max-width: 600px;
+    margin: 0; /* remove bottom margin */
+  }
+
+  .hero-left h1 {
+    font-size: 1.8rem;
+    line-height: 1.4;
+  }
+
+  .hero-left .tagline {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+  }
+
+  .buttons {
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
+
+
+/* ========================================== */
+@media (max-width: 768px) {
+  .hero-left h1 {
+    font-size: 1.8rem;
+    line-height: 1.4;
+  }
+
+  .hero-left .tagline {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+}
+
+
+
 /* About Section */
 .about-section {
   padding: 60px 20px;
@@ -598,9 +658,27 @@ body {
   max-width: 600px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
   animation: fadeIn 0.3s ease;
-  text-align: center;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;        /* Limit height of popup */
+  overflow-y: auto;        /* Enable scrolling */
+  scrollbar-width: thin;   /* For Firefox */
+  scrollbar-color: #a5a488 #f1f1f1;
 }
+
+/* Custom scrollbar (for Chrome, Edge) */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background: #a5a488;
+  border-radius: 8px;
+}
+.modal-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
 
 .modal-content h2 {
   margin-bottom: 10px;
@@ -687,4 +765,160 @@ body {
   }
 }
 
+/* .view-project {
+  height: 100px;
+} */
 
+
+#data-description-id {
+  margin-left: 10px;
+}
+
+/* Fix project card on mobile */
+@media (max-width: 768px) {
+  .project-card {
+    height: auto;
+  }
+
+  .project-card img {
+    filter: none;
+    transform: none;
+  }
+
+  /* Show project info by default on mobile */
+  .project-info {
+    opacity: 1 !important;
+    backdrop-filter: none;
+    background: #fff;
+    color: #000;
+    position: relative;
+    padding: 15px;
+  }
+
+  .project-info h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .project-info p {
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  .project-info a {
+    margin-top: 8px;
+    display: inline-block;
+    background: #a5a488;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+  }
+
+  .project-card:hover img {
+    transform: none;
+    filter: none;
+  }
+}
+
+
+
+
+
+
+/* ===== Certificate Modal Fullscreen (REPLACEMENT) ===== */
+#certificateModal {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+/* wrapper for image so close button can be in top-right of image */
+.modal-image-wrap {
+  position: relative;
+  width: calc(100% - 160px); /* leaves space for arrows on wide screens */
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#certificateImage {
+  width: 100%;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 24px rgba(255,255,255,0.08);
+  background: #111;
+}
+
+/* Prev / Next buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.1rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 50%;
+  padding: 10px 12px;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  z-index: 40;
+  transition: background 0.18s;
+}
+
+/* explicit left and right placement */
+.nav-btn.prev { left: 18px; }
+.nav-btn.next { right: 18px; }
+
+.nav-btn:hover { background: rgba(255,255,255,0.12); }
+
+/* close button in image wrapper */
+.modal-image-wrap .close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 50;
+  font-size: 28px;
+  color: #fff;
+  background: rgba(0,0,0,0.35);
+  border-radius: 6px;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+/* small screens adjustments */
+@media (max-width: 900px) {
+  .modal-slider { padding: 12px; }
+  .modal-image-wrap { width: calc(100% - 110px); }
+  .nav-btn { font-size: 1.8rem; padding: 8px 10px; }
+  .nav-btn.prev { left: 10px; }
+  .nav-btn.next { right: 10px; }
+}
+
+@media (max-width: 480px) {
+  .modal-image-wrap { width: 100%; }
+  .nav-btn { background: none; padding: 0; font-size: 1.6rem; }
+  .nav-btn.prev { left: 8px; }
+  .nav-btn.next { right: 8px; }
+  .modal-image-wrap .close { top: 6px; right: 6px; font-size: 24px; padding: 4px 8px; }
+}

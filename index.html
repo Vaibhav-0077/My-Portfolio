@@ -26,14 +26,18 @@
     </nav>
 
     <!-- Hero Section -->
+  
+
+    <!-- Hero Section -->
     <div id="particles-js">
         <section class="hero">
             <div class="hero-left">
                 <p class="tagline">WE DESIGN & BUILD BRANDS</p>
                 <h1>Hi, I am <span>Vaibhav Guigade</span> <br>I build responsive & modern websites.</h1>
                 <div class="buttons">
-                    <!-- <a href="#" class="btn primary">Certificates</a> -->
-                    <a href="VAIBHAV_GUIGADE_RESUME.pdf" class="btn outline" download>Download Resume</a>
+                     <!-- <a href="#" class="btn primary">Certificates</a>  -->
+                    <a href="#" id="viewCertificates" class="btn primary">View Certificates</a>
+                     <a href="VAIBHAV_GUIGADE_RESUME.pdf" class="btn outline" download>Download Resume</a>
                 </div>
             </div>
             <div class="hero-right">
@@ -41,7 +45,7 @@
                 <img src="VAIBHAV GUIGADE IMAGE.jpg" alt="VAIBHAV" />
             </div>
         </section>
-    </div>
+    </div> 
 
 
     <!-- About Section -->
@@ -116,8 +120,12 @@
         <h4>Nodejs</h4>
     </div> -->
     <div class="skill-card">
-        <img src="node+ecpress.jpg" class="skill-icon" alt="MySQL" />
-        <h4>Node.js & Express.js</h4>
+        <img src="node-js.png" class="skill-icon" alt="MySQL" />
+        <h4>Node.js</h4>
+    </div>
+    <div class="skill-card">
+        <img src="express.webp" class="skill-icon" alt="MySQL" />
+        <h4>Express.js</h4>
     </div>
     <div class="skill-card">
         <img src="git & github.png" class="skill-icon" alt="MySQL" />
@@ -205,11 +213,12 @@
                         class="view-project"
                         data-title="Hotel Management System"
                         data-tech="Python,SQLite"
-                        data-description="desktop-based project to manage hotel bookings, billing, and customer    management.<br>
-                                          Implemented front desk, room allocation, and billing modules to streamline hotel operations and reduce manual errors.<br>
-                                          Integrated food ordering and inventory management for efficient restaurant and housekeeping operations.<br>
-                                          Designed dynamic reports and analytics for revenue tracking, occupancy, and customer feedback.<br>
-                                          Enhanced user experience with a clean interface and automated notifications for bookings and payments.<br> "
+                        data-description="<li id='data-description-id'>desktop-based project to manage hotel bookings, billing, and customer    management.</li>
+                                          <li id='data-description-id'>Implemented front desk, room allocation, and billing modules to streamline hotel operations and reduce manual errors.</li>
+                                          <li id='data-description-id'>Integrated food ordering and inventory management for efficient restaurant and housekeeping operations.</li>
+                                          <li id='data-description-id'>Designed dynamic reports and analytics for revenue tracking, occupancy, and customer feedback.</li>
+                                          <li id='data-description-id'>Enhanced user experience with a clean interface and automated notifications for bookings and payments.</li>
+                                           "
                         data-link=""
                         data-demo="#">View Project</a>
                     </div>
@@ -218,16 +227,23 @@
                 <div class="project-card">
                     <img src="jewellery.png" alt="Amazon Clone" />
                     <div class="project-info">
-                        <h3>VAIBHAV jewels(E-Commerce Website)</h3>
+                        <h3>Lush jewels(E-Commerce Website)</h3>
                         <p>HTML, CSS, JS, node.js, MongoDB, rezorpay</p>
                         <a href="#" 
                         class="view-project"
-                        data-title="Amazon Clone"
+                        data-title="Lush Jewels"
                         data-tech="HTML, CSS, JavaScript, Node.js, MongoDB, rezorpay"
-                        data-description="Developed a responsive e-commerce website to showcase and sell jewellery online.<br>
-                                          Implemented product catalog, detailed product pages, shopping cart, and secure checkout functionality.<br>
-                                          Integrated payment gateway  and order management.<br>
-                                          Designed a clean UI/UX for smooth navigation and enhanced customer experience."
+                        data-description="<li id='data-description-id'>Developed a fully responsive jewellery e-commerce platform featuring dynamic product listings, detailed product pages with thumbnail zoom, and category-based browsing (Rings, Necklaces, Earrings, Bracelets).</li>
+                                          <li id='data-description-id'>Integrated MongoDB Atlas for scalable data management and used Cloudinary for fast, cloud-based product image storage and delivery.</li>
+                                          <li id='data-description-id'>Implemented a secure Admin Dashboard allowing authorized admins to add, edit, and delete products through image uploads and form submissions.</li>
+                                          <li id='data-description-id'>Built an admin authentication system with session-based login to restrict access to backend management features.</li>
+                                          <li id='data-description-id'> Designed an interactive product detail page with zoomable thumbnails, quantity selection, “Add to Cart,” and “Buy Now” functionality for enhanced user experience.</li>
+                                          <li id='data-description-id'> Added checkout and cart management logic using client-side JavaScript and EJS templates to maintain cart data and calculate totals dynamically.</li>
+                                          <li id='data-description-id'> Followed MVC architecture ensuring clean code structure and maintainability.</li>
+                                          <li id='data-description-id'> Used Tailwind CSS for modern, responsive, and visually appealing UI design.</li>
+                                          <li id='data-description-id'> Deployed the project with a live MongoDB Atlas connection, ensuring cloud-hosted scalability and performance readiness.</li>
+                                          <li id='data-description-id'> Planned future integration of Razorpay payment gateway and user login/signup system for secure transactions and personalized shopping experiences.</li>
+                                         "
                         data-link="https://github.com/Vaibhav-0077/Jewellery-Web "
                         data-demo="https://jewellery-web.onrender.com/">View Project</a>
                     </div>
@@ -274,6 +290,25 @@
                 </form>
             </div>
         </section> -->
+
+        
+
+            <!-- Certificates Modal (replace previous certificate modal) -->
+            <div id="certificateModal" class="modal" aria-hidden="true">
+            <div class="modal-slider">
+                <button class="nav-btn prev" aria-label="Previous certificate">&#10094;</button>
+
+                <div class="modal-image-wrap">
+                <button class="close" aria-label="Close">&times;</button>
+                <img id="certificateImage" src="" alt="Certificate" />
+                </div>
+
+                <button class="nav-btn next" aria-label="Next certificate">&#10095;</button>
+            </div>
+            </div>
+
+
+
 
 
         <!-- Footer -->
@@ -330,6 +365,94 @@
   window.addEventListener("click", (e) => {
     if (e.target === modal) modal.style.display = "none";
   });
+
+
+
+  (function () {
+    // Replace these with the actual certificate paths
+    const certificates = [
+      "certificate1.jpg",
+    //   "cert2.jpg",
+    //   "cert3.jpg"
+    ];
+
+    let currentCert = 0;
+    const certificateModal = document.getElementById("certificateModal");
+    const certificateImage = document.getElementById("certificateImage");
+    const viewCertificatesBtn = document.getElementById("viewCertificates");
+    const closeBtn = certificateModal.querySelector(".close");
+    const nextBtn = certificateModal.querySelector(".nav-btn.next");
+    const prevBtn = certificateModal.querySelector(".nav-btn.prev");
+
+    // helper to show modal
+    function showModal() {
+      certificateModal.style.display = "flex";
+      certificateModal.setAttribute("aria-hidden", "false");
+      showCertificate();
+    }
+
+    // helper to hide modal
+    function hideModal() {
+      certificateModal.style.display = "none";
+      certificateModal.setAttribute("aria-hidden", "true");
+    }
+
+    function showCertificate() {
+      if (!certificates || certificates.length === 0) return;
+      certificateImage.src = certificates[currentCert];
+    }
+
+    // open modal on button click
+    if (viewCertificatesBtn) {
+      viewCertificatesBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        currentCert = 0;
+        showModal();
+      });
+    }
+
+    // navigation actions
+    nextBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      currentCert = (currentCert + 1) % certificates.length;
+      showCertificate();
+    });
+    prevBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      currentCert = (currentCert - 1 + certificates.length) % certificates.length;
+      showCertificate();
+    });
+
+    // close actions
+    closeBtn.addEventListener("click", hideModal);
+    certificateModal.addEventListener("click", function (e) {
+      if (e.target === certificateModal) hideModal();
+    });
+
+    // keyboard navigation
+    window.addEventListener("keydown", function (e) {
+      if (certificateModal.style.display === "flex") {
+        if (e.key === "ArrowRight") nextBtn.click();
+        if (e.key === "ArrowLeft") prevBtn.click();
+        if (e.key === "Escape") hideModal();
+      }
+    });
+
+    // touch swipe support (optional simple version)
+    let touchStartX = null;
+    certificateImage.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+    certificateImage.addEventListener('touchend', function(e) {
+      if (!touchStartX) return;
+      const diff = e.changedTouches[0].screenX - touchStartX;
+      if (Math.abs(diff) > 50) {
+        if (diff < 0) nextBtn.click();
+        else prevBtn.click();
+      }
+      touchStartX = null;
+    });
+  })();
 </script>
 
 
